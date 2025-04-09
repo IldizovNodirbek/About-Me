@@ -1,0 +1,240 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #1a1a1a;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Header qismi */
+header {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1a1a;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+header h1 {
+  position: absolute;
+  top: 18px;
+  left: 15px;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "Orbitron";
+  color: #00ff41;
+  text-shadow: 0 0 10px #00ff41;
+}
+
+/* Skills konteyneri */
+.skills-container {
+  width: 100%;
+  min-height: calc(100vh - 10vh);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.skills-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+  max-width: 1400px;
+  padding: 20px;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  opacity: 0;
+  min-height: 450px; /* Dropdown uchun joy ajratish */
+}
+
+.skill-icon {
+  width: 350px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 30px #00ff41;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.skill-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.skill-icon:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px #00ff41, 0 0 60px rgba(0, 255, 65, 0.7);
+}
+
+/* Dropdown tugmasi */
+.dropdown-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.dropdown-btn.active svg {
+  transform: rotate(180deg);
+}
+
+.dropdown-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Dropdown content */
+.dropdown-content {
+  position: relative; /* Kartaning ustiga chiqmasligi uchun */
+  width: 100%;
+  max-width: 350px; /* Kartaga mos keladi */
+  background-color: #1a1a1a;
+  border: 3px solid #00ff41;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 10px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  z-index: 1;
+}
+
+.dropdown-content.active {
+  max-height: 200px; /* Maksimal balandlik, kerak bo‘lsa o‘zgartiriladi */
+  opacity: 1;
+  overflow-y: auto;
+}
+
+.dropdown-content p {
+  font-size: 1.1rem;
+  color: #fff;
+  text-align: center;
+}
+
+/* Texnologiyalarga xos ranglar */
+.skill-item.tailwind .skill-icon {
+  box-shadow: 0 0 30px #00e1ff;
+}
+
+.skill-item.tailwind .skill-icon:hover {
+  box-shadow: 0 0 40px #00e1ff, 0 0 60px rgba(0, 225, 255, 0.7);
+}
+
+.skill-item.mui .skill-icon {
+  box-shadow: 0 0 30px #007bff;
+}
+
+.skill-item.mui .skill-icon:hover {
+  box-shadow: 0 0 40px #007bff, 0 0 60px rgba(0, 123, 255, 0.7);
+}
+
+.skill-item.react .skill-icon {
+  box-shadow: 0 0 30px #00d8ff;
+}
+
+.skill-item.react .skill-icon:hover {
+  box-shadow: 0 0 40px #00d8ff, 0 0 60px rgba(0, 216, 255, 0.7);
+}
+
+.skill-item.redux .skill-icon {
+  box-shadow: 0 0 30px #764abc;
+}
+
+.skill-item.redux .skill-icon:hover {
+  box-shadow: 0 0 40px #764abc, 0 0 60px rgba(118, 74, 188, 0.7);
+}
+
+/* Animatsiyalar */
+.slide-in-left {
+  animation: slideInLeft 3.5s ease forwards;
+}
+
+.slide-in-right {
+  animation: slideInRight 3.5s ease forwards;
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Media so‘rovlari */
+@media (max-width: 1200px) {
+  .skills-row {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .skill-icon {
+    width: 300px;
+    height: 300px;
+  }
+  .dropdown-content {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  .skill-icon {
+    width: 200px;
+    height: 200px;
+  }
+  .dropdown-content {
+    max-width: 200px;
+    font-size: 0.9rem;
+  }
+  .skill-item {
+    min-height: 350px; /* Mobil uchun balandlikni kamaytirish */
+  }
+}

@@ -1,0 +1,309 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: black;
+  color: #fff;
+}
+
+nav {
+  width: 100%;
+  height: 10vh;
+  position: sticky;
+  top: 0;
+  background-color: #000;
+  z-index: 10;
+}
+
+.nav-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Cherry Cream Soda";
+}
+
+.logo {
+  position: absolute;
+  font-family: Orbitron;
+  top: 18px;
+  left: 15px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #00ff41;
+  text-shadow: 0 0 10px #00ff41;
+}
+
+.hamburg {
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 20px;
+  display: none;
+}
+
+/* Eski .social-links uslublarini o‘chirib, yangisini qo‘shing */
+.social-links {
+  position: relative;
+  display: inline-block;
+  margin: 20px 0;
+}
+
+.dropdown-btn {
+  width: 150px;
+  height: 40px;
+  background-color: #00ff41;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dropdown-btn:hover {
+  background-color: transparent;
+  border: 2px solid #00ff41;
+  color: #fff;
+  box-shadow: 0 0 15px #00ff41;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #1a1a1a;
+  border-radius: 5px;
+  box-shadow: 0 0 20px #00ff41;
+  padding: 10px 60px;
+  display: none; /* Dastlab yashirin */
+  flex-direction: flex;
+  gap: 10px;
+  flex-wrap: wrap; /* Elementlar bir-biriga yaqin joylashadi */
+  align-items: center;
+  z-index: 1;
+  opacity: 0; /* Animatsiya uchun */
+  transform: translateY(-10px); /* Yuqoridan tushish uchun */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Silliq animatsiya */
+}
+
+.dropdown-content.active {
+  display: flex; /* Column holatda ko‘rinadi */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown-content a {
+  margin: 10px 0;
+  text-decoration: none;
+  font-family: "Cherry Cream Soda";
+}
+
+.dropdown-content svg {
+  width: 30px;
+  height: 30px;
+  fill: #00ff41;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.dropdown-content svg:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 10px #00ff41);
+}
+
+
+.cancel {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.nav-container .links a {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0 20px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-container .links a:hover {
+  color: #00ff41;
+  border-bottom: 2px solid #00ff41;
+}
+
+.main-container {
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  justify-content: space-between; /* Rasm o‘ngga, kontent chapga */
+  align-items: center;
+  padding: 20px;
+}
+
+.content {
+  width: 50%;
+  padding: 20px;
+  font-family: "Cherry Cream Soda";
+}
+
+.content h1 {
+  font-size: clamp(1.5rem, 2vw + 1rem, 2.5rem);
+}
+
+.content h1 span {
+  color: #00ff41;
+  text-shadow: 0 0 10px #00ff41;
+}
+
+.typewriter {
+  font-size: clamp(1.2rem, 1.5vw + 1rem, 2rem);
+  margin: 10px 0;
+  font-family: "Orbitron";
+}
+
+.typewriter-text {
+  color: #00ff41;
+}
+
+.typewriter-text::after {
+  content: "|";
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.content p {
+  font-size: clamp(0.9rem, 1vw + 0.5rem, 1.2rem);
+  margin: 20px 0;
+}
+
+.dropdown {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  transition: top 0.3s ease-in-out;
+  z-index: 5;
+}
+
+.dropdown.active {
+  top: 0;
+}
+
+.dropdown .links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.dropdown .links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 1.2rem;
+  transition: background 0.3s ease;
+}
+
+.dropdown .links a:hover {
+  background-color: #00ff41;
+}
+
+.content button {
+  width: 200px;
+  height: 50px;
+  background-color: #00ff41;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.content button:hover {
+  background-color: transparent;
+  border: 2px solid #00ff41;
+  box-shadow: 0 0 20px #00ff41;
+  color: #fff;
+}
+
+/* Rasm uchun yangi uslublar */
+.image {
+  width: 400px; /* 1024x1024 dan kichraytirildi */
+  height: 400px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 30px #00ff41;
+  animation: glow 2s infinite ease-in-out; /* Doimiy animatsiya */
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Rasm to‘liq sig‘adi */
+  transition: transform 0.3s ease, filter 0.3s ease; /* Hover uchun silliq o‘tish */
+}
+
+.image:hover img {
+  transform: scale(1.1); /* Hoverda kattalashadi */
+  filter: brightness(1.2) drop-shadow(0 0 20px #00ff41); /* Yorqinlik va soya */
+}
+
+/* Futuristik pulsatsiya animatsiyasi */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 30px #00ff41;
+  }
+  50% {
+    box-shadow: 0 0 50px #00ff41, 0 0 70px #00ff41;
+  }
+  100% {
+    box-shadow: 0 0 30px #00ff41;
+  }
+}
+
+/* Media so‘rovlari */
+@media (max-width: 884px) {
+  .nav-container .links {
+    display: none;
+  }
+  .hamburg {
+    display: block;
+  }
+  .main-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .content {
+    width: 80%;
+    text-align: center;
+  }
+  .image {
+    width: 300px; /* Mobil uchun kichraytirildi */
+    height: 300px;
+    margin-top: 20px; /* Kontentdan keyin joy */
+  }
+  .content button {
+    margin: 20px auto;
+    display: block;
+  }
+}

@@ -1,0 +1,213 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #1a1a1a;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Header */
+header {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1a1a;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+header h1 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 2.5rem;
+  color: #00ff41;
+  text-shadow: 0 0 10px #00ff41;
+}
+
+/* Intro konteyneri */
+.intro-container {
+  width: 100%;
+  min-height: calc(100vh - 10vh);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  gap: 40px;
+}
+
+/* Har bir bo‘lim */
+.intro-section {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Rasm */
+.image {
+  width: 350px;
+  height: 350px;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 3px solid #00ff41;
+  box-shadow: 0 0 20px #00ff41, 0 0 40px rgba(0, 255, 65, 0.5);
+  opacity: 0;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.image:hover img {
+  transform: scale(1.1);
+}
+
+/* Matnlar */
+.intro-text {
+  font-family: "Cherry Cream Soda", cursive;
+  color: #fff;
+  text-align: center;
+  max-width: 700px;
+  opacity: 0;
+}
+
+h2.intro-text {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(1.5rem, 3vw + 1rem, 3rem);
+  font-weight: 700;
+}
+
+h2 span {
+  color: #00ff41;
+  text-shadow: 0 0 10px #00ff41;
+}
+
+p.intro-text {
+  font-size: clamp(1rem, 2vw + 0.5rem, 1.8rem);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.custom-span {
+  font-family: "Orbitron", sans-serif;
+  color: #00ff41;
+  font-weight: bold;
+  text-shadow: 0 0 5px #00ff41;
+}
+
+/* Tugma */
+.header-link {
+  display: inline-block;
+  padding: 12px 30px;
+  margin: 20px 0;
+  background: none;
+  border: 2px solid #00ff41;
+  border-radius: 8px;
+  color: #00ff41;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.2rem;
+  text-shadow: 0 0 5px #00ff41;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.header-link:hover {
+  background-color: #00ff41;
+  color: #1a1a1a;
+  box-shadow: 0 0 20px #00ff41;
+}
+
+/* Animatsiyalar */
+.slide-in-left-text.active {
+  animation: slideInLeft 1s ease forwards;
+}
+
+.slide-in-right-img.active {
+  animation: slideInRight 1s ease forwards;
+}
+
+.slide-in-bottom.active {
+  animation: slideInBottom 1s ease forwards;
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsivlik */
+@media (max-width: 884px) {
+  .image {
+    width: 300px;
+    height: 300px;
+  }
+  h2.intro-text {
+    font-size: clamp(1.2rem, 2.5vw + 0.8rem, 2.5rem);
+  }
+  p.intro-text {
+    font-size: clamp(0.9rem, 1.8vw + 0.5rem, 1.5rem);
+  }
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  .image {
+    width: 250px;
+    height: 250px;
+  }
+  h2.intro-text {
+    font-size: clamp(1rem, 2vw + 0.5rem, 2rem);
+  }
+  p.intro-text {
+    font-size: clamp(0.8rem, 1.5vw + 0.5rem, 1.2rem);
+  }
+  .header-link {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}

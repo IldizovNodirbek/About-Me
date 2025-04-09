@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nodirbek - Contact</title>
+    <link rel="stylesheet" href="../CSS/Contact.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cherry+Cream+Soda&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>CONTACT</h1>
+    </header>
+    <main class="contact-container">
+      <section class="contact-section">
+        <h2 class="title slide-in-top">Contact Me</h2>
+        <p class="subtitle slide-in-bottom">
+            Message me and let's create amazing projects together!
+        </p>
+        <form class="contact-form">
+          <div class="input-group slide-in-left">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="your name"
+            />
+            <label for="name">Name</label>
+          </div>
+          <div class="input-group slide-in-right">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="your email"
+            />
+            <label for="email">Email</label>
+          </div>
+          <div class="input-group slide-in-left">
+            <textarea
+              id="message"
+              name="message"
+              required
+              placeholder="your message"
+            ></textarea>
+            <label for="message">Message</label>
+          </div>
+          <button type="submit" class="submit-btn slide-in-bottom">
+            SUBMIT
+          </button>
+        </form>
+      </section>
+    </main>
+    <script src="../JS/contact.js"></script>
+  </body>
+</html>

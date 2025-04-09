@@ -1,0 +1,239 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #1a1a1a;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Header */
+header {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1a1a;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+header h1 {
+  position: absolute;
+  top: 18px;
+  left: 15px;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "Orbitron";
+  color: #00ff41;
+  text-shadow: 0 0 10px #00ff41;
+}
+
+/* Contact konteyneri */
+.contact-container {
+  width: 100%;
+  min-height: calc(100vh - 10vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.contact-section {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+}
+
+.title {
+  font-family: "Orbitron", sans-serif;
+  font-size: 3rem;
+  color: #00ff41;
+  text-shadow: 0 0 15px #00ff41;
+  margin-bottom: 20px;
+  opacity: 0;
+}
+
+.subtitle {
+  font-family: "Cherry Cream Soda", cursive;
+  font-size: 1.5rem;
+  color: #fff;
+  text-shadow: 0 0 5px #00ff41;
+  margin-bottom: 40px;
+  opacity: 0;
+}
+
+/* Form stilizatsiyasi */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.input-group {
+  position: relative;
+  width: 100%;
+  opacity: 0;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 15px;
+  background: none;
+  border: 2px solid #00ff41;
+  border-radius: 8px;
+  color: #fff;
+  font-family: "Cherry Cream Soda", cursive;
+  font-size: 1.2rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #00e1ff;
+  box-shadow: 0 0 15px #00ff41;
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+label {
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  background-color: #1a1a1a;
+  padding: 0 5px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1rem;
+  color: #00ff41;
+  text-shadow: 0 0 5px #00ff41;
+  transition: all 0.3s ease;
+}
+
+input:focus + label,
+textarea:focus + label,
+input:not(:placeholder-shown) + label,
+textarea:not(:placeholder-shown) + label {
+  top: -20px;
+  left: 10px;
+  font-size: 0.9rem;
+  color: #00e1ff;
+}
+
+/* Submit tugmasi */
+.submit-btn {
+  padding: 15px 30px;
+  background: none;
+  border: 2px solid #00ff41;
+  border-radius: 8px;
+  color: #00ff41;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.2rem;
+  text-shadow: 0 0 5px #00ff41;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.submit-btn:hover {
+  background-color: #00ff41;
+  color: #1a1a1a;
+  box-shadow: 0 0 20px #00ff41;
+}
+
+/* Animatsiyalar */
+.slide-in-top {
+  animation: slideInTop 0.8s ease forwards;
+}
+
+.slide-in-bottom {
+  animation: slideInBottom 0.8s ease forwards 0.2s;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.8s ease forwards 0.4s;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.8s ease forwards 0.6s;
+}
+
+@keyframes slideInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsivlik */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .subtitle {
+    font-size: 1.2rem;
+  }
+  input,
+  textarea {
+    font-size: 1rem;
+    padding: 12px;
+  }
+  .submit-btn {
+    font-size: 1rem;
+    padding: 12px 25px;
+  }
+  .contact-section {
+    padding: 0 10px;
+  }
+}
