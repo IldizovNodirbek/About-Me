@@ -1,14 +1,10 @@
-# About Me - Portfolio Website
+# About Me 
 
-Bu mening shaxsiy portfolio veb-saytim bo‘lib, unda mening ko‘nikmalarim, tajribam va aloqa ma’lumotlarim taqdim etilgan.
+This is my personal portfolio website that showcases my skills, experience and contact information.
 
-## Texnologiyalar
-- **HTML**: Struktura uchun
-- **CSS**: Futuristik dizayn va animatsiyalar uchun
-- **JavaScript**: Interaktivlik uchun
-
-## Sahifalar
-- **Home**: Asosiy sahifa
-- **Skills**: Mening texnik ko‘nikmalarim
-- **Introduction**: O‘zim haqimda qisqacha ma’lumot
-- **Contact**: Menga xabar yuborish uchun forma
+## Navigations
+- **Home**: Main page
+- **Skills**: technologies I have learned and am currently learning
+- **Introduction**: Brief information about myself
+- **MyProjects**: the largest websites I have created
+- **Contact**: the form to connect with me
